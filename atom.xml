@@ -4,7 +4,7 @@
   <title><![CDATA[来自蓝星的漫游者]]></title>
   <link href="http://tcolorcat.github.io/atom.xml" rel="self"/>
   <link href="http://tcolorcat.github.io/"/>
-  <updated>2016-10-09T12:43:22+08:00</updated>
+  <updated>2016-10-09T13:49:16+08:00</updated>
   <id>http://tcolorcat.github.io/</id>
   <author>
     <name><![CDATA[TCcat]]></name>
@@ -14,10 +14,10 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Lilith]]></title>
-    <link href="http://tcolorcat.github.io/blog/2016/10/09/lilith/"/>
-    <updated>2016-10-09T11:37:25+08:00</updated>
-    <id>http://tcolorcat.github.io/blog/2016/10/09/lilith</id>
+    <title type="html"><![CDATA[Octopress]]></title>
+    <link href="http://tcolorcat.github.io/blog/2016/10/09/dd/"/>
+    <updated>2016-10-09T13:04:00+08:00</updated>
+    <id>http://tcolorcat.github.io/blog/2016/10/09/dd</id>
     <content type="html"><![CDATA[
 ]]></content>
   </entry>
