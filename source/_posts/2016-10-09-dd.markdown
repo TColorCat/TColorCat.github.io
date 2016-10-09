@@ -1,0 +1,123 @@
+---
+layout: post
+title: "使用Octopress建立个人博客"
+date: 2016-10-09 13:04
+comments: true
+categories: 
+---
+#前言#
+前几天无意间看到在GitHub Pages上利用Octopress部署个人博客，感觉很新颖，自己也想着搭建一个，折腾了几天后，基本上能够正常使用，就用这个博客的第一篇文章记录下配置过程，以免遗忘。（ps.Windows真是不适合这个版本了，在搭建的时候会有一些小错误，这个随后会说到。）
+
+  
+  
+# 一.前期准备工作 #
+## 1.1 创建github仓库 ##
+首先需要再GitHub上新建一个仓库repository，命名应该为**你的用户名**username.github.io,这个就是github中绑定的用来存放生成GitHub Pages的文件的地方，在一切收拾妥当后，可以通过**username.github.io**这个网页地址访问博客。  
+GitHub Pages 是GitHub推出的用于建立用户、组织和项目站点的工具，每个GitHub账号和组织都可以建立一个站点以及无数个项目站点。
+## 1.2 安装Ruby ##
+一般而言Octopress2需要Ruby1.9.3以上的版本，对于不同的操作系统Ruby的安装方法不同。
+对于Windows，需要下载[RubyInstaller](http://www.ruby-lang.org/en/documentation/installation/#rubyinstaller)。
+在Linux系统中使用[RVM](http://www.ruby-lang.org/en/documentation/installation/#rvm)。
+安装过程都是一样简单，不需要额外做什么，把文件目录设定好就可以。在Windows下还需要下载安装[Devkit](http://rubyinstaller.org/downloads/),解压目录放在Ruby安装目录里，然后启动ruby.exe用cd等指令进入DevKit目录里，运行以下的命令
+
+	ruby dk.rb init
+	ruby dk.rb install
+如果是在国内，可能需要改变软件更新源，运行命令
+
+	gem sources -a http://ruby.taobao.org/
+	gem sources -r http://rubygems.org/
+	gem sources –l
+	gem update --system    #更新RubyGems软件，如果不需要更新略过
+在所有的工作结束之后可以使用
+  `ruby --version ` 
+来确认安装成功查看版本安装情况，如果不行，就重启吧，少年哟。
+
+[RubyGem常用命令备忘](http://blog.csdn.net/orangleliu/article/details/25080309)
+# 二.安装Octopress #
+### 下载Octopress ###
+首先打开git shell，下载Octopress到安装github时设定的本地目录下的octopress目录下。
+
+	git clone git://github.com/imathis/octopress.git octopress     
+     
+	cd octopress
+同样是为了国内更新源，进入octopress目录下的`Gemfile`把第一行的source改为`http://ruby.taobao.org/`。
+### 安装jekyll依赖 ###
+还是在octopress的控制台位置下，运行一下命令
+
+	gem install bundler
+	rbenv rehash # 如果你使用的不是 rbenv 的话，略过
+	bundle install
+### 安装Octopress默认主题 ###
+	rake install
+### 配置Octopress ###
+在octopress目录下有Octopress的配置文件
+`_config.yml`
+在开始阶段只需要修改在
+`Main Configs`
+下的`title`，`subtitle`，`author`，顾名思义，博客的姓名，字，作者。
+### 写作新文章 ###
+在Octopress提供了`rake`命令用来创建新文章，生成静态页面，部署到GitHub上等任务。这些命令可以在octopress根目录下的`Gemfile`的文件里查到。以下是一些常用的命令。更多的说明可以参考Octopress的[官方文档](http://octopress.org/docs/blogging/)。
+
+	rake new_post["title"] # 在 source/_posts 目录下创建一篇新博文，title只能是英文
+	rake generate          # 生成博文到 public 目录下
+	rake watch             # 查看 source 和 sass 目录的变化，且有变化时重新生成博文
+	rake preview           # 在 http://localhost:4000/ 预览博文
+
+[关于中文文章题目，以及图片代码问题的解决](http://www.tuicool.com/articles/Av6fqu)。
+
+Windows预设是Big5编码,所以要想`rake generate`的时候不报编码错误,我们需要设置一下编码。
+打开计算机–属性–高级系统设置–环境变量，新增LANG和`LC_ALL`，值都是zh_CN.UTF-8，完成后确定保存。
+
+文章内容的写作是用[Markdown语法](http://www.jianshu.com/p/q81RER)进行书写，需要记忆的部分只要多用几次就可以掌握。
+
+在初学时，Markdown编辑器可以使用MarkdownPad，它可以实时显示文章的真实状态，能够更好地掌握语法。随后可以使用 Sublime Text3+[MarkdownEditing](https://github.com/SublimeText-Markdown/MarkdownEditing) 插件进行书写。
+尤其需要注意的是**一定要确保文章保存为UTF-8 无 BOM 格式，文件名称不能是中文。**
+
+在编译中一种可能是出现了中文乱码错误
+
+	error: invalid byte sequence in GBK. Use --trace to view backtrace
+这时就需要修改Ruby中的文件`convertible.rb`，路径在
+
+	Ruby193\lib\ruby\gems\1.9.1\gems\jekyll-1.5.1\lib\jekyll  #其中1.9.1是版本号
+找到
+
+	self.content = File.read_with_options(File.join(base, name),merged_file_read_opts(opts))
+改成
+
+	self.content = File.read_with_options(File.join(base, name),:encoding=>"utf-8")
+再找到相同目录下tags目录打开`include.rb`找到
+
+	File.read_with_options(file, file_read_opts(context))
+改为
+
+	File.read_with_options(file, :encoding=>"utf-8")
+以上两个函数可能会因为版本不同会有变化，但是第一个参数是不变的。
+
+### Deploy Octopress到GitHub Pages###
+使用`rake setup_github_pages`命令配置GitHub Pages，它会提示输入页面的网址url，https://github.com/username/username.github.io 
+
+接着运行如下命令
+
+	rake generate #生成博文
+	rake deploy # 发布博文到 GitHub Pages
+
+
+
+
+
+[deploy时一些错误](http://stackoverflow.com/questions/21356212/failed-to-deploy-to-github-pages-using-octopress)
+
+[error: src refspec master does not match any.](http://stackoverflow.com/questions/21264738/error-src-refspec-master-does-not-match-any )[另一种解决手法](http://blog.csdn.net/qyf_5445/article/details/8737913)[还有一种解决手法](http://www.jianshu.com/p/8d26730386f3)
+# 三.一些进阶手法 #
+http://blog.csdn.net/moedisk/article/details/52748910
+http://pangyi.github.io/tags/octopress/
+http://pangyi.github.io/blog/20150125/octopressshi-yong-zhong-jing-yan-zong-jie/
+[让Octopress为文章自动生成目录](http://blog.csdn.net/xcysuccess3/article/details/45952325)
+参考
+http://blog.leichunfeng.com/blog/2014/11/11/use-octopress-plus-github-pages-to-setup-a-personal-blog/
+
+http://justcoding.iteye.com/blog/1954645
+
+http://blog.csdn.net/xuewater/article/details/40146257
+
+[git的几点使用手法](http://blog.csdn.net/u010853261/article/details/51935503)
