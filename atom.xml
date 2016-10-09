@@ -4,13 +4,22 @@
   <title><![CDATA[来自蓝星的漫游者]]></title>
   <link href="http://tcolorcat.github.io/atom.xml" rel="self"/>
   <link href="http://tcolorcat.github.io/"/>
-  <updated>2016-10-09T11:35:17+08:00</updated>
+  <updated>2016-10-09T11:39:03+08:00</updated>
   <id>http://tcolorcat.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[TCcat]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Lilith]]></title>
+    <link href="http://tcolorcat.github.io/blog/2016/10/09/lilith/"/>
+    <updated>2016-10-09T11:37:25+08:00</updated>
+    <id>http://tcolorcat.github.io/blog/2016/10/09/lilith</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
 </feed>
