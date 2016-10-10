@@ -4,7 +4,7 @@
   <title><![CDATA[来自蓝星的漫游者]]></title>
   <link href="http://tcolorcat.github.io/atom.xml" rel="self"/>
   <link href="http://tcolorcat.github.io/"/>
-  <updated>2016-10-09T22:09:54+08:00</updated>
+  <updated>2016-10-10T10:30:45+08:00</updated>
   <id>http://tcolorcat.github.io/</id>
   <author>
     <name><![CDATA[TCcat]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Yisili]]></title>
+    <link href="http://tcolorcat.github.io/blog/2016/10/10/yisili/"/>
+    <updated>2016-10-10T10:30:35+08:00</updated>
+    <id>http://tcolorcat.github.io/blog/2016/10/10/yisili</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ddd]]></title>
