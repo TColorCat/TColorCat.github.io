@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: 
-
-Sitemap: http://tcolorcat.github.io/sitemap.xml 
