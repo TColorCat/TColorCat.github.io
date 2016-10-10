@@ -1,202 +1,90 @@
+<<<<<<< HEAD
+---
+layout: null
+---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[来自蓝星的漫游者]]></title>
+  <title><![CDATA[{{ site.title | cdata_escape }}]]></title>
+  <link href="{{ site.url }}/atom.xml" rel="self"/>
+  <link href="{{ site.url }}/"/>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <id>{{ site.url }}/</id>
+  <author>
+    <name><![CDATA[{{ site.author | strip_html }}]]></name>
+    {% if site.email %}<email><![CDATA[{{ site.email }}]]></email>{% endif %}
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  {% for post in site.posts limit: 20 %}
+  <entry>
+    <title type="html"><![CDATA[{% if site.titlecase %}{{ post.title | titlecase | cdata_escape }}{% else %}{{ post.title | cdata_escape }}{% endif %}]]></title>
+    <link href="{{ site.url }}{{ post.url }}"/>
+    <updated>{{ post.date | date_to_xmlschema }}</updated>
+    <id>{{ site.url }}{{ post.id }}</id>
+    <content type="html"><![CDATA[{{ post.content | expand_urls: site.url | cdata_escape }}]]></content>
+  </entry>
+  {% endfor %}
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[来自喵星的漫游日志]]></title>
   <link href="http://tcolorcat.github.io/atom.xml" rel="self"/>
   <link href="http://tcolorcat.github.io/"/>
-  <updated>2016-10-09T22:44:25+08:00</updated>
+  <updated>2016-10-09T10:32:32+08:00</updated>
   <id>http://tcolorcat.github.io/</id>
   <author>
-    <name><![CDATA[TCcat]]></name>
+    <name><![CDATA[TColorCat]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
   <entry>
-    <title type="html"><![CDATA[New Try]]></title>
-    <link href="http://tcolorcat.github.io/blog/2016/10/09/new-try/"/>
-    <updated>2016-10-09T22:44:07+08:00</updated>
-    <id>http://tcolorcat.github.io/blog/2016/10/09/new-try</id>
+    <title type="html"><![CDATA[Newpost]]></title>
+    <link href="http://tcolorcat.github.io/blog/2016/09/30/newpost/"/>
+    <updated>2016-09-30T16:09:45+08:00</updated>
+    <id>http://tcolorcat.github.io/blog/2016/09/30/newpost</id>
     <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Ddd]]></title>
-    <link href="http://tcolorcat.github.io/blog/2016/10/09/ddd/"/>
-    <updated>2016-10-09T22:09:40+08:00</updated>
-    <id>http://tcolorcat.github.io/blog/2016/10/09/ddd</id>
+    <title type="html"><![CDATA[Lilith]]></title>
+    <link href="http://tcolorcat.github.io/blog/2016/09/29/lilith/"/>
+    <updated>2016-09-29T19:23:59+08:00</updated>
+    <id>http://tcolorcat.github.io/blog/2016/09/29/lilith</id>
+    <content type="html"><![CDATA[<p>finde the most finde</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[At Last Try]]></title>
+    <link href="http://tcolorcat.github.io/blog/2016/09/27/at-last-try/"/>
+    <updated>2016-09-27T13:40:14+08:00</updated>
+    <id>http://tcolorcat.github.io/blog/2016/09/27/at-last-try</id>
     <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Test Push]]></title>
-    <link href="http://tcolorcat.github.io/blog/2016/10/09/test-push/"/>
-    <updated>2016-10-09T21:52:04+08:00</updated>
-    <id>http://tcolorcat.github.io/blog/2016/10/09/test-push</id>
+    <title type="html"><![CDATA[Next Try]]></title>
+    <link href="http://tcolorcat.github.io/blog/2016/09/27/next-try/"/>
+    <updated>2016-09-27T13:09:42+08:00</updated>
+    <id>http://tcolorcat.github.io/blog/2016/09/27/next-try</id>
     <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[使用Octopress建立个人博客]]></title>
-    <link href="http://tcolorcat.github.io/blog/2016/10/09/dd/"/>
-    <updated>2016-10-09T13:04:00+08:00</updated>
-    <id>http://tcolorcat.github.io/blog/2016/10/09/dd</id>
-    <content type="html"><![CDATA[<h1>前言</h1>
-
-<p>前几天无意间看到在GitHub Pages上利用Octopress部署个人博客，感觉很新颖，自己也想着搭建一个，折腾了几天后，基本上能够正常使用，就用这个博客的第一篇文章记录下配置过程，以免遗忘。（ps.Windows真是不适合这个版本了，在搭建的时候会有一些小错误，这个随后会说到。）</p>
-
-<h1>一.前期准备工作</h1>
-
-<h2>1.1 创建github仓库</h2>
-
-<p>首先需要再GitHub上新建一个仓库repository，命名应该为<strong>你的用户名</strong>username.github.io,这个就是github中绑定的用来存放生成GitHub Pages的文件的地方，在一切收拾妥当后，可以通过<strong>username.github.io</strong>这个网页地址访问博客。<br/>
-GitHub Pages 是GitHub推出的用于建立用户、组织和项目站点的工具，每个GitHub账号和组织都可以建立一个站点以及无数个项目站点。</p>
-
-<h2>1.2 安装Ruby</h2>
-
-<p>一般而言Octopress2需要Ruby1.9.3以上的版本，对于不同的操作系统Ruby的安装方法不同。
-对于Windows，需要下载<a href="http://www.ruby-lang.org/en/documentation/installation/#rubyinstaller">RubyInstaller</a>。
-在Linux系统中使用<a href="http://www.ruby-lang.org/en/documentation/installation/#rvm">RVM</a>。
-安装过程都是一样简单，不需要额外做什么，把文件目录设定好就可以。在Windows下还需要下载安装<a href="http://rubyinstaller.org/downloads/">Devkit</a>,解压目录放在Ruby安装目录里，然后启动ruby.exe用cd等指令进入DevKit目录里，运行以下的命令</p>
-
-<pre><code>ruby dk.rb init
-ruby dk.rb install
-</code></pre>
-
-<p>如果是在国内，可能需要改变软件更新源，运行命令</p>
-
-<pre><code>gem sources -a http://ruby.taobao.org/
-gem sources -r http://rubygems.org/
-gem sources –l
-gem update --system    #更新RubyGems软件，如果不需要更新略过
-</code></pre>
-
-<p>在所有的工作结束之后可以使用
-  <code>ruby --version</code>
-来确认安装成功查看版本安装情况，如果不行，就重启吧，少年哟。</p>
-
-<p><a href="http://blog.csdn.net/orangleliu/article/details/25080309">RubyGem常用命令备忘</a></p>
-
-<h1>二.安装Octopress</h1>
-
-<h3>下载Octopress</h3>
-
-<p>首先打开git shell，下载Octopress到安装github时设定的本地目录下的octopress目录下。</p>
-
-<pre><code>git clone git://github.com/imathis/octopress.git octopress     
-
-cd octopress
-</code></pre>
-
-<p>同样是为了国内更新源，进入octopress目录下的<code>Gemfile</code>把第一行的source改为<code>http://ruby.taobao.org/</code>。</p>
-
-<h3>安装jekyll依赖</h3>
-
-<p>还是在octopress的控制台位置下，运行一下命令</p>
-
-<pre><code>gem install bundler
-rbenv rehash # 如果你使用的不是 rbenv 的话，略过
-bundle install
-</code></pre>
-
-<h3>安装Octopress默认主题</h3>
-
-<pre><code>rake install
-</code></pre>
-
-<h3>配置Octopress</h3>
-
-<p>在octopress目录下有Octopress的配置文件
-<code>_config.yml</code>
-在开始阶段只需要修改在
-<code>Main Configs</code>
-下的<code>title</code>，<code>subtitle</code>，<code>author</code>，顾名思义，博客的姓名，字，作者。</p>
-
-<h3>写作新文章</h3>
-
-<p>在Octopress提供了<code>rake</code>命令用来创建新文章，生成静态页面，部署到GitHub上等任务。这些命令可以在octopress根目录下的<code>Gemfile</code>的文件里查到。以下是一些常用的命令。更多的说明可以参考Octopress的<a href="http://octopress.org/docs/blogging/">官方文档</a>。</p>
-
-<pre><code>rake new_post["title"] # 在 source/_posts 目录下创建一篇新博文，title只能是英文
-rake generate          # 生成博文到 public 目录下
-rake watch             # 查看 source 和 sass 目录的变化，且有变化时重新生成博文
-rake preview           # 在 http://localhost:4000/ 预览博文
-</code></pre>
-
-<p><a href="http://www.tuicool.com/articles/Av6fqu">关于中文文章题目，以及图片代码问题的解决</a>。</p>
-
-<p>Windows预设是Big5编码,所以要想<code>rake generate</code>的时候不报编码错误,我们需要设置一下编码。
-打开计算机–属性–高级系统设置–环境变量，新增LANG和<code>LC_ALL</code>，值都是zh_CN.UTF-8，完成后确定保存。</p>
-
-<p>文章内容的写作是用<a href="http://www.jianshu.com/p/q81RER">Markdown语法</a>进行书写，需要记忆的部分只要多用几次就可以掌握。</p>
-
-<p>在初学时，Markdown编辑器可以使用MarkdownPad，它可以实时显示文章的真实状态，能够更好地掌握语法。随后可以使用 Sublime Text3+<a href="https://github.com/SublimeText-Markdown/MarkdownEditing">MarkdownEditing</a> 插件进行书写。
-尤其需要注意的是<strong>一定要确保文章保存为UTF-8 无 BOM 格式，文件名称不能是中文。</strong></p>
-
-<p>在编译中一种可能是出现了中文乱码错误</p>
-
-<pre><code>error: invalid byte sequence in GBK. Use --trace to view backtrace
-</code></pre>
-
-<p>这时就需要修改Ruby中的文件<code>convertible.rb</code>，路径在</p>
-
-<pre><code>Ruby193\lib\ruby\gems\1.9.1\gems\jekyll-1.5.1\lib\jekyll  #其中1.9.1是版本号
-</code></pre>
-
-<p>找到</p>
-
-<pre><code>self.content = File.read_with_options(File.join(base, name),merged_file_read_opts(opts))
-</code></pre>
-
-<p>改成</p>
-
-<pre><code>self.content = File.read_with_options(File.join(base, name),:encoding=&gt;"utf-8")
-</code></pre>
-
-<p>再找到相同目录下tags目录打开<code>include.rb</code>找到</p>
-
-<pre><code>File.read_with_options(file, file_read_opts(context))
-</code></pre>
-
-<p>改为</p>
-
-<pre><code>File.read_with_options(file, :encoding=&gt;"utf-8")
-</code></pre>
-
-<p>以上两个函数可能会因为版本不同会有变化，但是第一个参数是不变的。</p>
-
-<h3>Deploy Octopress到GitHub Pages</h3>
-
-<p>使用<code>rake setup_github_pages</code>命令配置GitHub Pages，它会提示输入页面的网址url，<a href="https://github.com/username/username.github.io">https://github.com/username/username.github.io</a></p>
-
-<p>接着运行如下命令</p>
-
-<pre><code>rake generate #生成博文
-rake deploy # 发布博文到 GitHub Pages
-</code></pre>
-
-<p><a href="http://stackoverflow.com/questions/21356212/failed-to-deploy-to-github-pages-using-octopress">deploy时一些错误</a></p>
-
-<p><a href="http://stackoverflow.com/questions/21264738/error-src-refspec-master-does-not-match-any">error: src refspec master does not match any.</a><a href="http://blog.csdn.net/qyf_5445/article/details/8737913">另一种解决手法</a><a href="http://www.jianshu.com/p/8d26730386f3">还有一种解决手法</a></p>
-
-<h1>三.一些进阶手法</h1>
-
-<p><a href="http://blog.csdn.net/moedisk/article/details/52748910">http://blog.csdn.net/moedisk/article/details/52748910</a>
-<a href="http://pangyi.github.io/tags/octopress/">http://pangyi.github.io/tags/octopress/</a>
-<a href="http://pangyi.github.io/blog/20150125/octopressshi-yong-zhong-jing-yan-zong-jie/">http://pangyi.github.io/blog/20150125/octopressshi-yong-zhong-jing-yan-zong-jie/</a>
-<a href="http://blog.csdn.net/xcysuccess3/article/details/45952325">让Octopress为文章自动生成目录</a>
-参考
-<a href="http://blog.leichunfeng.com/blog/2014/11/11/use-octopress-plus-github-pages-to-setup-a-personal-blog/">http://blog.leichunfeng.com/blog/2014/11/11/use-octopress-plus-github-pages-to-setup-a-personal-blog/</a></p>
-
-<p><a href="http://justcoding.iteye.com/blog/1954645">http://justcoding.iteye.com/blog/1954645</a></p>
-
-<p><a href="http://blog.csdn.net/xuewater/article/details/40146257">http://blog.csdn.net/xuewater/article/details/40146257</a></p>
-
-<p><a href="http://blog.csdn.net/u010853261/article/details/51935503">git的几点使用手法</a></p>
+    <title type="html"><![CDATA[My New Post]]></title>
+    <link href="http://tcolorcat.github.io/blog/2016/09/27/my-new-post/"/>
+    <updated>2016-09-27T10:51:35+08:00</updated>
+    <id>http://tcolorcat.github.io/blog/2016/09/27/my-new-post</id>
+    <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
+>>>>>>> 3eb7b41153dbdd0524934a6355bd82d5adce8718
 </feed>

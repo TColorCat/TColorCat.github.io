@@ -1,3 +1,23 @@
+<<<<<<< HEAD
+---
+layout: page
+title: Blog Archive
+footer: false
+---
+
+<div id="blog-archives">
+{% for post in site.posts reverse %}
+{% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+{% unless year == this_year %}
+  {% assign year = this_year %}
+  <h2>{{ year }}</h2>
+{% endunless %}
+<article>
+  {% include archive_post.html %}
+</article>
+{% endfor %}
+</div>
+=======
 
 <!DOCTYPE html>
 <!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
@@ -5,15 +25,16 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - 来自蓝星的漫游者</title>
-  <meta name="author" content="TCcat">
+  <title>Blog Archive - 来自喵星的漫游日志</title>
+  <meta name="author" content="TColorCat">
 
   
-  <meta name="description" content="Blog Archive 2016 New Try
-Oct 09 2016 Ddd
-Oct 09 2016 Test Push
-Oct 09 2016 使用Octopress建立个人博客
-Oct 09 2016 Recent Posts New Try Ddd Test Push &hellip;">
+  <meta name="description" content="Blog Archive 2016 Newpost
+Sep 30 2016 Lilith
+Sep 29 2016 At Last Try
+Sep 27 2016 Next Try
+Sep 27 2016 My New Post
+Sep 27 2016 Recent Posts Newpost &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -25,13 +46,13 @@ Oct 09 2016 Recent Posts New Try Ddd Test Push &hellip;">
   <link rel="canonical" href="http://tcolorcat.github.io/blog/archives/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="来自蓝星的漫游者" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="来自喵星的漫游日志" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<!--link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
   
@@ -40,9 +61,9 @@ Oct 09 2016 Recent Posts New Try Ddd Test Push &hellip;">
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">来自蓝星的漫游者</a></h1>
+  <h1><a href="/">来自喵星的漫游日志</a></h1>
   
-    <h2>知识之海的一点收获</h2>
+    <h2>在知识之海里的一点收获</h2>
   
 </hgroup>
 
@@ -84,8 +105,8 @@ Oct 09 2016 Recent Posts New Try Ddd Test Push &hellip;">
 
 <article>
   
-<h1><a href="/blog/2016/10/09/new-try/">New Try</a></h1>
-<time datetime="2016-10-09T22:44:07+08:00" pubdate><span class='month'>Oct</span> <span class='day'>09</span> <span class='year'>2016</span></time>
+<h1><a href="/blog/2016/09/30/newpost/">Newpost</a></h1>
+<time datetime="2016-09-30T16:09:45+08:00" pubdate><span class='month'>Sep</span> <span class='day'>30</span> <span class='year'>2016</span></time>
 
 
 </article>
@@ -94,8 +115,8 @@ Oct 09 2016 Recent Posts New Try Ddd Test Push &hellip;">
 
 <article>
   
-<h1><a href="/blog/2016/10/09/ddd/">Ddd</a></h1>
-<time datetime="2016-10-09T22:09:40+08:00" pubdate><span class='month'>Oct</span> <span class='day'>09</span> <span class='year'>2016</span></time>
+<h1><a href="/blog/2016/09/29/lilith/">Lilith</a></h1>
+<time datetime="2016-09-29T19:23:59+08:00" pubdate><span class='month'>Sep</span> <span class='day'>29</span> <span class='year'>2016</span></time>
 
 
 </article>
@@ -104,8 +125,8 @@ Oct 09 2016 Recent Posts New Try Ddd Test Push &hellip;">
 
 <article>
   
-<h1><a href="/blog/2016/10/09/test-push/">Test Push</a></h1>
-<time datetime="2016-10-09T21:52:04+08:00" pubdate><span class='month'>Oct</span> <span class='day'>09</span> <span class='year'>2016</span></time>
+<h1><a href="/blog/2016/09/27/at-last-try/">At Last Try</a></h1>
+<time datetime="2016-09-27T13:40:14+08:00" pubdate><span class='month'>Sep</span> <span class='day'>27</span> <span class='year'>2016</span></time>
 
 
 </article>
@@ -114,8 +135,18 @@ Oct 09 2016 Recent Posts New Try Ddd Test Push &hellip;">
 
 <article>
   
-<h1><a href="/blog/2016/10/09/dd/">使用Octopress建立个人博客</a></h1>
-<time datetime="2016-10-09T13:04:00+08:00" pubdate><span class='month'>Oct</span> <span class='day'>09</span> <span class='year'>2016</span></time>
+<h1><a href="/blog/2016/09/27/next-try/">Next Try</a></h1>
+<time datetime="2016-09-27T13:09:42+08:00" pubdate><span class='month'>Sep</span> <span class='day'>27</span> <span class='year'>2016</span></time>
+
+
+</article>
+
+
+
+<article>
+  
+<h1><a href="/blog/2016/09/27/my-new-post/">My New Post</a></h1>
+<time datetime="2016-09-27T10:51:35+08:00" pubdate><span class='month'>Sep</span> <span class='day'>27</span> <span class='year'>2016</span></time>
 
 
 </article>
@@ -134,19 +165,23 @@ Oct 09 2016 Recent Posts New Try Ddd Test Push &hellip;">
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2016/10/09/new-try/">New Try</a>
+        <a href="/blog/2016/09/30/newpost/">Newpost</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2016/10/09/ddd/">Ddd</a>
+        <a href="/blog/2016/09/29/lilith/">Lilith</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2016/10/09/test-push/">Test Push</a>
+        <a href="/blog/2016/09/27/at-last-try/">At Last Try</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2016/10/09/dd/">使用Octopress建立个人博客</a>
+        <a href="/blog/2016/09/27/next-try/">Next Try</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/09/27/my-new-post/">My New Post</a>
       </li>
     
   </ul>
@@ -163,7 +198,7 @@ Oct 09 2016 Recent Posts New Try Ddd Test Push &hellip;">
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2016 - TCcat -
+  Copyright &copy; 2016 - TColorCat -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
@@ -175,10 +210,11 @@ Oct 09 2016 Recent Posts New Try Ddd Test Push &hellip;">
 
 
 
-<!--
--->
+
+
 
 
 
 </body>
 </html>
+>>>>>>> 3eb7b41153dbdd0524934a6355bd82d5adce8718
