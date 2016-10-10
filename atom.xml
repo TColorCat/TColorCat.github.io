@@ -4,7 +4,7 @@
   <title><![CDATA[来自蓝星的漫游者]]></title>
   <link href="http://tcolorcat.github.io/atom.xml" rel="self"/>
   <link href="http://tcolorcat.github.io/"/>
-  <updated>2016-10-10T11:26:40+08:00</updated>
+  <updated>2016-10-10T11:28:54+08:00</updated>
   <id>http://tcolorcat.github.io/</id>
   <author>
     <name><![CDATA[TCcat]]></name>
@@ -12,60 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Threeopints]]></title>
-    <link href="http://tcolorcat.github.io/blog/2016/10/10/threeopints/"/>
-    <updated>2016-10-10T11:16:40+08:00</updated>
-    <id>http://tcolorcat.github.io/blog/2016/10/10/threeopints</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Threeopint]]></title>
-    <link href="http://tcolorcat.github.io/blog/2016/10/10/threeopint/"/>
-    <updated>2016-10-10T11:08:40+08:00</updated>
-    <id>http://tcolorcat.github.io/blog/2016/10/10/threeopint</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Oprun]]></title>
-    <link href="http://tcolorcat.github.io/blog/2016/10/10/oprun/"/>
-    <updated>2016-10-10T11:03:03+08:00</updated>
-    <id>http://tcolorcat.github.io/blog/2016/10/10/oprun</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Yisili]]></title>
-    <link href="http://tcolorcat.github.io/blog/2016/10/10/yisili/"/>
-    <updated>2016-10-10T10:30:35+08:00</updated>
-    <id>http://tcolorcat.github.io/blog/2016/10/10/yisili</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Ddd]]></title>
-    <link href="http://tcolorcat.github.io/blog/2016/10/09/ddd/"/>
-    <updated>2016-10-09T22:09:40+08:00</updated>
-    <id>http://tcolorcat.github.io/blog/2016/10/09/ddd</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Test Push]]></title>
-    <link href="http://tcolorcat.github.io/blog/2016/10/09/test-push/"/>
-    <updated>2016-10-09T21:52:04+08:00</updated>
-    <id>http://tcolorcat.github.io/blog/2016/10/09/test-push</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[使用Octopress建立个人博客]]></title>
