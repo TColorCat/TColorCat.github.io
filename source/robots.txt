@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ---
 layout: null
 ---
@@ -6,9 +5,3 @@ User-agent: *
 Disallow: 
 
 Sitemap: {{ site.url }}/sitemap.xml 
-=======
-User-agent: *
-Disallow: 
-
-Sitemap: http://tcolorcat.github.io/sitemap.xml 
->>>>>>> 3eb7b41153dbdd0524934a6355bd82d5adce8718
